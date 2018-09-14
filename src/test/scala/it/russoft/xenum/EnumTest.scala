@@ -18,10 +18,66 @@ class EnumTest extends FlatSpec with Matchers {
     val Apricot: FruitType = value("APRICOT")
   }
 
+  //
+  // ordinal
+  //
+  "Fruit.Apple.ordinal" should "be equal to 0" in {
+    Fruit.Apple.ordinal shouldEqual 0
+  }
+
+  "Fruit.Banana.ordinal" should "be equal to 1" in {
+    Fruit.Banana.ordinal shouldEqual 1
+  }
+
+  "Fruit.Apricot.ordinal" should "be equal to 2" in {
+    Fruit.Apricot.ordinal shouldEqual 2
+  }
+
+  //
+  // values comparing
+  //
+  "Fruit.Apple" should "not be less than Fruit.Apple" in {
+    Fruit.Apple < Fruit.Apple shouldEqual false
+  }
+
+  "Fruit.Apple" should "be less than or equal to Fruit.Apple" in {
+    Fruit.Apple <= Fruit.Apple shouldEqual true
+  }
+
+  "Fruit.Apple" should "be less than or equal to Fruit.Banana" in {
+    Fruit.Apple <= Fruit.Banana shouldEqual true
+  }
+
+  "Fruit.Apple" should "be less than Fruit.Banana" in {
+    Fruit.Apple < Fruit.Banana shouldEqual true
+  }
+
+  "Fruit.Banana" should "not be greater than Fruit.Banana" in {
+    Fruit.Banana > Fruit.Banana shouldEqual false
+  }
+
+  "Fruit.Apricot" should "be greater than Fruit.Banana" in {
+    Fruit.Apricot > Fruit.Banana shouldEqual true
+  }
+
+  "Fruit.Apricot" should "be greater than or equal to Fruit.Banana" in {
+    Fruit.Apricot >= Fruit.Banana shouldEqual true
+  }
+
+  "Fruit.Apricot" should "should be greater than or equal to Fruit.Apricot" in {
+    Fruit.Apricot >= Fruit.Apricot shouldEqual true
+  }
+
+  //
+  // cardinality
+  //
   "Fruit enum" should "should have three values" in {
     Fruit.values.length shouldEqual 3
   }
 
+  //
+  // type
+  //
   "Fruit.Apple" should "be instance of Enum#EnumVal" in {
      Fruit.Apple shouldBe a[Enum#EnumVal]
   }
@@ -38,6 +94,9 @@ class EnumTest extends FlatSpec with Matchers {
     Fruit.Apple.value shouldEqual "APPLE"
   }
 
+  //
+  // accessors
+  //
   "APPLE name" should "corresponds to Fruit.Apple" in {
     Fruit.withName("APPLE") shouldEqual Fruit.Apple
   }

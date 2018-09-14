@@ -12,7 +12,8 @@ abstract class Enum {
     * @param enum The `Enum` reference object.
     * @param value The real value.
     */
-  case class EnumVal(enum: Enum, value: String) {
+  case class EnumVal(enum: Enum, ordinal: Int, value: String) extends Ordered[EnumVal] {
+    override def compare(that: EnumVal): Int = ordinal compareTo that.ordinal
     override def toString: String = value
   }
 
@@ -25,7 +26,7 @@ abstract class Enum {
     * @return Returns just added `Enum#EnumVal` entry.
     */
   protected def value(s: String): EnumVal = {
-    val v = EnumVal(this, s)
+    val v = EnumVal(this, vs.length, s)
     vs = v :: vs
     v
   }
