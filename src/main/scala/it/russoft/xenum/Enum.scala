@@ -27,7 +27,7 @@ abstract class Enum {
     */
   protected def value(s: String): EnumVal = {
     val v = EnumVal(this, vs.length, s)
-    vs = v :: vs
+    vs = vs :+ v
     v
   }
 

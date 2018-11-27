@@ -34,6 +34,21 @@ class EnumTest extends FlatSpec with Matchers {
   }
 
   //
+  // values order
+  //
+  "Fruit.values.head" should "be equal to Fruit.Apple" in {
+    Fruit.values.head shouldEqual Fruit.Apple
+  }
+
+  "Fruit.values(1)" should "be equal to Fruit.Banana" in {
+    Fruit.values(1) shouldEqual Fruit.Banana
+  }
+
+  "Fruit.values(2)" should "be equal to Fruit.Apricot" in {
+    Fruit.values(2) shouldEqual Fruit.Apricot
+  }
+
+  //
   // values comparing
   //
   "Fruit.Apple" should "not be less than Fruit.Apple" in {
