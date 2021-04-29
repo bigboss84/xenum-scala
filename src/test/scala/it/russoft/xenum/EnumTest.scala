@@ -1,11 +1,12 @@
 package it.russoft.xenum
 
-import org.scalatest._
+import org.scalatest.flatspec.AnyFlatSpec
+import org.scalatest.matchers.should.Matchers
 
 /**
   * Tests [[Enum]] object.
   */
-class EnumTest extends FlatSpec with Matchers {
+class EnumTest extends AnyFlatSpec with Matchers {
 
   //
   // defining new enumeration type
@@ -94,7 +95,7 @@ class EnumTest extends FlatSpec with Matchers {
   // type
   //
   "Fruit.Apple" should "be instance of Enum#EnumVal" in {
-     Fruit.Apple shouldBe a[Enum#EnumVal]
+    Fruit.Apple shouldBe a[Enum#EnumVal]
   }
 
   "Fruit.Apple.enum" should "be instance of Enum" in {
