@@ -1,6 +1,6 @@
 name := "xenum-scala"
 
-version := "1.2"
+version := "1.3"
 
 scalaVersion := "2.13.5"
 
