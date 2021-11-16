@@ -3,6 +3,6 @@ organization := "it.russoft.xenum"
 
 version := "1.3.1"
 
-scalaVersion := "2.13.5"
+scalaVersion := "2.13.7"
 
 libraryDependencies += "org.scalatest" %% "scalatest" % "3.2.8" % Test
