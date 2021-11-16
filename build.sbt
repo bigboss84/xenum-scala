@@ -1,6 +1,7 @@
 name := "xenum-scala"
+organization := "it.russoft.xenum"
 
-version := "1.3"
+version := "1.3.1"
 
 scalaVersion := "2.13.5"
 

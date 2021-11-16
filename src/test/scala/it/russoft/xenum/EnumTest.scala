@@ -121,4 +121,8 @@ class EnumTest extends AnyFlatSpec with Matchers {
     an[IllegalArgumentException] should be thrownBy Fruit.withName("INVALID")
   }
 
+  "INVALID name" should "corresponds to None" in {
+    Fruit.withNameOpt("INVALID") shouldEqual None
+  }
+
 }

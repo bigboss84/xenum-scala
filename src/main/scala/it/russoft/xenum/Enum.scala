@@ -49,4 +49,12 @@ abstract class Enum {
       case None => throw new IllegalArgumentException
     }
   }
+
+  /**
+    * Returns the enumeration value that corresponds
+    * to the supplied value.
+    * @param s The value to search in `Enum#EnumVal`s
+    * @return Returns `Option[Enum#EnumVal]` that wraps found enum value.
+    */
+  def withNameOpt(s: String): Option[EnumVal] = vs.find(_.value == s)
 }
